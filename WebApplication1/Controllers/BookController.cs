@@ -14,25 +14,25 @@ namespace WebApplication1.Controllers
             _bookRepository = bookRepository;
         }
         [HttpGet]
-        public async Task <IEnumerable<Book>> GetBooks()
+        public async Task <IEnumerable<BookModel>> GetBooks()
         {
             return await _bookRepository.Get();
         }
         [HttpGet("{id}")]
-        public async Task<ActionResult<Book>> GetBook(int id)
+        public async Task<ActionResult<BookModel>> GetBook(int id)
         {
             return await _bookRepository.Get(id);
         }
         
         [HttpPost]
-        public async Task<ActionResult<Book>> PostBook([FromBody] Book book)
+        public async Task<ActionResult<BookModel>> PostBook([FromBody] BookModel book)
         {
             var NewBook = await _bookRepository.Create(book);
             return CreatedAtAction(nameof(GetBook),new {id = NewBook.Id},NewBook) ;
         } 
         
         [HttpPut]
-        public async Task<ActionResult<Book>> PutBook(int id, [FromBody] Book book)
+        public async Task<ActionResult<BookModel>> PutBook(int id, [FromBody] BookModel book)
         {
             if(id != book.Id)
             {
@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
         [HttpDelete]
-        public async Task<ActionResult<Book>> DeleteBook(int id, [FromBody] Book book)
+        public async Task<ActionResult<BookModel>> DeleteBook(int id, [FromBody] BookModel book)
         {
             if(id == null)
             {

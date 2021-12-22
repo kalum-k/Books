@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //database
-builder.Services.AddDbContext<BookContext>(x => x.UseSqlite("Data source=books.db"));
+builder.Services.AddDbContext<BookContext>(x => x.UseSqlite("Data source=book.db"));
 builder.Services.AddScoped<IBookRepository, BookRepository > ();
 
 //razorpages

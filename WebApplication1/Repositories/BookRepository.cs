@@ -11,9 +11,9 @@ namespace WebApplication1.Repositories
         {
             _context = context;
         }
-        public async Task<Book> Create(Book book)
+        public async Task<BookModel> Create(BookModel book)
         {
-            _context.Books.Add(book);
+            _context.Book.Add(book);
             await _context.SaveChangesAsync();
 
             return book;
@@ -21,22 +21,22 @@ namespace WebApplication1.Repositories
 
         public async Task Delete(int id)
         {
-            var bookToDelete = await _context.Books.FindAsync(id);
-            _context.Books.Remove(bookToDelete);
+            var bookToDelete = await _context.Book.FindAsync(id);
+            _context.Book.Remove(bookToDelete);
             await _context.SaveChangesAsync();
         }
         
-        public async Task<IEnumerable<Book>> Get()
+        public async Task<IEnumerable<BookModel>> Get()
         {
-            return await _context.Books.ToListAsync();
+            return await _context.Book.ToListAsync();
         }
 
-        public async Task<Book> Get(int id)
+        public async Task<BookModel> Get(int id)
         {
-            return await _context.Books.FindAsync(id);
+            return await _context.Book.FindAsync(id);
         }
 
-        public async Task Update(Book book)
+        public async Task Update(BookModel book)
         {
             _context.Entry(book).State = EntityState.Modified;
             await _context.SaveChangesAsync();

@@ -9,6 +9,6 @@ namespace WebApplication1.Models
         {
             Database.EnsureCreated();
         }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<BookModel> Book { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+﻿@page
+@model WebApplication1.Pages.Forms.AddBookModel
+@{
+    ViewData["Title"] = "Add Book";
+}
+<h1>Add Book</h1>
+<form method="post">
+    <input type="text" asp-for="Book.Tittles" placeholder="Name of book" />
+    <input type="text" asp-for="Book.Author" placeholder="Author" />
+    <input type="text" asp-for="Book.Description" placeholder="Description" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

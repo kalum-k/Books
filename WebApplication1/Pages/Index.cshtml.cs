@@ -11,10 +11,15 @@ namespace WebApplication1.Pages
         {
             _logger = logger;
         }
+        [BindProperty(SupportsGet = true)]
+        public string Tittles { get; set; }
 
         public void OnGet()
         {
-
+            if (string.IsNullOrWhiteSpace(Tittles))
+            {
+                Tittles = "Books?";
+            }
         }
     }
 }

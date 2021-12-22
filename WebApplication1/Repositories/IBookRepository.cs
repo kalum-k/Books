@@ -2,10 +2,10 @@
 {
     public interface IBookRepository
     {
-        Task<IEnumerable<Book>> Get();
-        Task<Book> Get(int id);
-        Task<Book> Create(Book book);
-        Task Update(Book book);
+        Task<IEnumerable<BookModel>> Get();
+        Task<BookModel> Get(int id);
+        Task<BookModel> Create(BookModel book);
+        Task Update(BookModel book);
         Task Delete(int id);
     }
 }
