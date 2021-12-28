@@ -10,6 +10,7 @@ namespace WebApplication1.Pages.Forms
         public void OnGet()
         {
         }
+
         public IActionResult OnPost()
         {
             if (ModelState.IsValid == false)
@@ -21,5 +22,6 @@ namespace WebApplication1.Pages.Forms
                 new { Tittles = Book.Tittles }
                 );
         }
+
     }
 }

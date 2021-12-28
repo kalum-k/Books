@@ -2,14 +2,13 @@
 
 namespace WebApplication1.Models
 {
-    public class BookContext : DbContext
+    public class UserContext : DbContext
     {
-        public BookContext(DbContextOptions<BookContext>options)
+        public UserContext(DbContextOptions<UserContext> options)
             : base(options)
         {
             Database.EnsureCreated();
         }
-        public DbSet<BookModel> Book { get; set; }
-       
+        public DbSet<UserModel> User { get; set; }
     }
 }

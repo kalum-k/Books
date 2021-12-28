@@ -14,6 +14,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BookContext>(x => x.UseSqlite("Data source=book.db"));
 builder.Services.AddScoped<IBookRepository, BookRepository > ();
 
+//database
+builder.Services.AddDbContext<UserContext>(y => y.UseSqlite("Data source=user.db"));
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+
 //razorpages
 builder.Services.AddRazorPages();
 

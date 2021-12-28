@@ -4,7 +4,10 @@
     "\\WebApplication1",
     "\\WebApplication1\\Controllers",
     "\\WebApplication1\\Models",
-    "\\WebApplication1\\Repositories"
+    "\\WebApplication1\\Pages",
+    "\\WebApplication1\\Pages\\Admin",
+    "\\WebApplication1\\Pages\\Forms"
   ],
+  "SelectedNode": "\\WebApplication1.sln",
   "PreviewInSolutionExplorer": false
 }
